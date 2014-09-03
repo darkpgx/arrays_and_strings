@@ -4,26 +4,26 @@
 
 var reverseWords = function (str) {
   var words = [];
-  var temp = '';
-  var temp2 = '';
+  var word_holder = '';
+  var reverse_str = '';
   for (var i = 0; i < str.length; i++) {
     if(str.charAt(i) !== ' ') {
-      temp = temp + str.charAt(i);
+      word_holder = word_holder + str.charAt(i);
     }
     else {
-      words.push(temp);
-      temp ='';
+      words.push(word_holder);
+      word_holder ='';
     };
   };
-  if (temp !== '') {words.push(temp);}; //for the last word that has not been added to array
+  if (word_holder !== '') {words.push(word_holder);}; //for the last word that has not been added to array
   for (var i = words.length -1; i >= 0; i--) {
     if (i !== 0) {
-      temp2 = temp2 + words[i] + ' ';
+      reverse_str = reverse_str + words[i] + ' ';
     }
-    else {temp2 = temp2 + words[i]}; //last word will not have space at the end
+    else {reverse_str = reverse_str + words[i]}; //last word will not have space at the end
   };
 
-  return temp2;
+  return reverse_str;
 };
 
 console.log (reverseWords('Do or do not,'));
